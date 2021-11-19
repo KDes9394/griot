@@ -1,6 +1,10 @@
 .container {
-    flex-direction: column;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 4fr 7fr 1.8fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
 
 .item {
     flex-grow: 4;
@@ -26,3 +30,172 @@
     grid-area: month;
     background-color: rgb(173,173,173);
 }
+
+
+
+
+.nav_bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "theater_name links links .";
+  grid-area: 1 / 1 / 2 / 5;
+  background-color: black;
+  color: white;
+}
+
+.month_2{
+  
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: rgb(230, 230, 230);
+  font-size: 18px;
+}
+
+.theater_name { 
+    grid-area: theater_name;
+    place-self: center; 
+  
+  }
+
+.links { 
+    grid-area: links; 
+    place-self: center;
+    text-decoration: none;
+    color: white;
+    justify-content: space-evenly;
+    margin: 2em;
+  }
+
+.links :hover{
+    color: rgb(167, 164, 164);
+}
+
+.bigpicture { 
+    grid-area: 2 / 1 / 3 / 5;
+
+    max-width: 100%;
+    max-height: 1000px;
+
+    overflow: hidden;
+  }
+
+  .bigpicture img{
+      position: relative;
+  }
+
+  .bp_text{
+          position: absolute;
+          color: white;
+          top: 40vh;
+          left: 46vh;
+          z-index: 1;
+          place-self: center;
+          font-size: 100px;
+      
+  }
+
+.body { 
+    grid-area: 3 / 1 / 4 / 5; 
+
+  }
+
+.footer { 
+    grid-area: 4 / 1 / 5 / 5; 
+    background-color: black;
+
+  }
+
+.map_pic { 
+    grid-area: 4 / 1 / 5 / 2; 
+    place-self: center;
+  }
+
+.info { 
+    grid-area: 4 / 2 / 5 / 3; 
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info :hover{
+      color: rgb(167, 164, 164)
+  }
+
+.shows { 
+    grid-area: 4 / 3 / 5 / 4; 
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shows :hover{
+      color: rgb(167, 164, 164)
+  }
+
+.social { 
+    grid-area: 4 / 4 / 5 / 5; 
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    align-self: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social :hover{
+      color: rgb(167, 164, 164)
+  }
+
+  .show_times {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: .5fr 1fr 5px 1fr 5px 1fr 5px 1fr 5px; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "month month month month"
+      "thumbnail desc desc readmore"
+      "line line line line"
+      "thumbnail desc desc readmore"
+      "line1 line1 line1 line1"
+      "thumbnail desc desc readmore"
+      "line2 line2 line2 line2"
+      "thumbnail desc desc readmore"
+      "line3 line3 line3 line3"; 
+    grid-area: 3 / 2 / 4 / 4; 
+  }
+  .line {grid-area: line; }
+  .line3 { grid-area: line3; }
+  .line2 { grid-area: line2; }
+  .line1 { grid-area: line1; }
+  .month { 
+    grid-area: month; 
+    border: 1px solid grey;
+    background-color: rgb(224, 224, 224);
+    align-self: end;
+  }
+  .thumbnail{ 
+    grid-area: thumbnail; 
+    place-self: center;
+  }
+
+  .desc { 
+    grid-area: desc;
+    place-self: center;
+    margin-bottom: 20px;
+   }
+
+  .readmore { 
+    grid-area: readmore; 
+    color: white;
+    justify-self: end;
+    align-self: center;
+  }
+  
